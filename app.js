@@ -26,12 +26,13 @@
   const audioToggleBtn = document.getElementById('audio-toggle-btn');
 
   // Section order definition
-  const sectionList = ['page-letter', 'page-commitments', 'page-memories', 'page-safe-space'];
+  const sectionList = ['page-letter', 'page-soundtrack', 'page-commitments', 'page-memories', 'page-safe-space'];
   const sectionLabels = [
-    'Section 1 of 4: The Letter',
-    'Section 2 of 4: Commitments',
-    'Section 3 of 4: 🎥 Video & Photos',
-    'Section 4 of 4: A Quiet Promise'
+    'Section 1 of 5: The Letter',
+    'Section 2 of 5: Our Songs',
+    'Section 3 of 5: Commitments',
+    'Section 4 of 5: 🎥 Video & Photos',
+    'Section 5 of 5: A Quiet Promise'
   ];
   let currentSectionIndex = 0;
 
@@ -205,12 +206,17 @@
     isAudioPlaying = !isAudioPlaying;
 
     if (isAudioPlaying) {
+      document.querySelectorAll('.track-card audio').forEach(audio => audio.pause());
+      if (memoryVideo) {
+        wasAmbientPlayingBeforeVideo = false;
+        memoryVideo.pause();
+      }
       audioToggleBtn.classList.add('active-audio');
-      audioToggleBtn.querySelector('.audio-label').textContent = 'Pause Music';
+      audioToggleBtn.querySelector('.audio-label').textContent = 'Pause ambience';
       playAmbientPadChord();
     } else {
       audioToggleBtn.classList.remove('active-audio');
-      audioToggleBtn.querySelector('.audio-label').textContent = 'Ambient Music';
+      audioToggleBtn.querySelector('.audio-label').textContent = 'Ambient sound';
       if (audioTimer) clearTimeout(audioTimer);
     }
   });
@@ -220,16 +226,18 @@
   // Automatically pause background ambient music when the video plays
   // =========================================================================
   const memoryVideo = document.getElementById('featured-memory-video');
+  const soundtrackAudios = document.querySelectorAll('.track-card audio');
   let wasAmbientPlayingBeforeVideo = false;
 
   if (memoryVideo) {
     memoryVideo.addEventListener('play', () => {
+      soundtrackAudios.forEach(audio => audio.pause());
       if (isAudioPlaying) {
         wasAmbientPlayingBeforeVideo = true;
         isAudioPlaying = false;
         if (audioTimer) clearTimeout(audioTimer);
         audioToggleBtn.classList.remove('active-audio');
-        audioToggleBtn.querySelector('.audio-label').textContent = 'Ambient Music';
+        audioToggleBtn.querySelector('.audio-label').textContent = 'Ambient sound';
       }
     });
 
@@ -238,7 +246,7 @@
         initAudio();
         isAudioPlaying = true;
         audioToggleBtn.classList.add('active-audio');
-        audioToggleBtn.querySelector('.audio-label').textContent = 'Pause Music';
+        audioToggleBtn.querySelector('.audio-label').textContent = 'Pause ambience';
         playAmbientPadChord();
         wasAmbientPlayingBeforeVideo = false;
       }
@@ -249,12 +257,135 @@
         initAudio();
         isAudioPlaying = true;
         audioToggleBtn.classList.add('active-audio');
-        audioToggleBtn.querySelector('.audio-label').textContent = 'Pause Music';
+        audioToggleBtn.querySelector('.audio-label').textContent = 'Pause ambience';
         playAmbientPadChord();
         wasAmbientPlayingBeforeVideo = false;
       }
     });
   }
+
+  // =========================================================================
+  // SOUNDTRACK PLAYERS
+  // =========================================================================
+  function formatTime(seconds) {
+    if (!Number.isFinite(seconds)) return '0:00';
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
+    return `${minutes}:${remainingSeconds}`;
+  }
+
+  function updateTrackProgress(audio) {
+    const card = audio.closest('.track-card');
+    const progress = card.querySelector('.progress-bar-wrap');
+    const currentTime = card.querySelector('.time-display');
+    const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
+    const percentage = duration ? (audio.currentTime / duration) * 100 : 0;
+
+    progress.setAttribute('aria-valuenow', percentage.toFixed(0));
+    progress.setAttribute('aria-valuetext', `${formatTime(audio.currentTime)} of ${formatTime(Math.round(duration))}`);
+    card.querySelector('.progress-bar-fill').style.width = `${percentage}%`;
+    currentTime.textContent = formatTime(audio.currentTime);
+  }
+
+  soundtrackAudios.forEach(audio => {
+    const card = audio.closest('.track-card');
+    const playButton = card.querySelector('.custom-play-btn');
+    const progress = card.querySelector('.progress-bar-wrap');
+    const status = card.querySelector('.player-status');
+    const title = card.querySelector('.track-title').textContent.replace(/[“”"]/g, '');
+    const durationLabel = card.querySelector('.track-duration');
+
+    progress.setAttribute('role', 'slider');
+    progress.setAttribute('tabindex', '0');
+    progress.setAttribute('aria-label', `Seek ${title}`);
+    progress.setAttribute('aria-valuemin', '0');
+    progress.setAttribute('aria-valuemax', '100');
+    progress.setAttribute('aria-valuenow', '0');
+    progress.setAttribute('aria-valuetext', '0:00');
+
+    const setPlayingState = playing => {
+      card.classList.toggle('is-playing', playing);
+      playButton.querySelector('.play-svg').classList.toggle('hidden', playing);
+      playButton.querySelector('.pause-svg').classList.toggle('hidden', !playing);
+      playButton.setAttribute('aria-label', `${playing ? 'Pause' : 'Play'} ${title}`);
+      playButton.setAttribute('aria-pressed', String(playing));
+    };
+
+    playButton.addEventListener('click', async () => {
+      status.textContent = '';
+
+      if (!audio.paused) {
+        audio.pause();
+        return;
+      }
+
+      soundtrackAudios.forEach(otherAudio => {
+        if (otherAudio !== audio) otherAudio.pause();
+      });
+      if (memoryVideo) {
+        wasAmbientPlayingBeforeVideo = false;
+        memoryVideo.pause();
+      }
+      if (isAudioPlaying) {
+        isAudioPlaying = false;
+        if (audioTimer) clearTimeout(audioTimer);
+        audioToggleBtn.classList.remove('active-audio');
+        audioToggleBtn.querySelector('.audio-label').textContent = 'Ambient sound';
+      }
+      if (audio.ended) audio.currentTime = 0;
+
+      try {
+        await audio.play();
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+        status.textContent = 'This track could not be played. Please check that its audio file is available.';
+        console.error(`Unable to play ${title}.`, error);
+      }
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+      if (Number.isFinite(audio.duration)) durationLabel.textContent = formatTime(Math.round(audio.duration));
+      updateTrackProgress(audio);
+    });
+    audio.addEventListener('timeupdate', () => updateTrackProgress(audio));
+    audio.addEventListener('play', () => setPlayingState(true));
+    audio.addEventListener('pause', () => setPlayingState(false));
+    audio.addEventListener('ended', () => {
+      setPlayingState(false);
+      updateTrackProgress(audio);
+    });
+    audio.addEventListener('error', () => {
+      status.textContent = 'This track could not be loaded. Please check that its audio file is available.';
+      setPlayingState(false);
+    });
+
+    const seekToPointer = event => {
+      if (!Number.isFinite(audio.duration) || !audio.duration) return;
+      const bounds = progress.getBoundingClientRect();
+      const fraction = Math.min(1, Math.max(0, (event.clientX - bounds.left) / bounds.width));
+      audio.currentTime = fraction * audio.duration;
+      updateTrackProgress(audio);
+    };
+
+    progress.addEventListener('click', seekToPointer);
+    progress.addEventListener('keydown', event => {
+      if (!Number.isFinite(audio.duration) || !audio.duration) return;
+      const step = event.shiftKey ? 10 : 5;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        audio.currentTime = Math.min(audio.duration, Math.max(0, audio.currentTime + (event.key === 'ArrowRight' ? step : -step)));
+      } else if (event.key === 'Home') {
+        event.preventDefault();
+        audio.currentTime = 0;
+      } else if (event.key === 'End') {
+        event.preventDefault();
+        audio.currentTime = audio.duration;
+      } else {
+        return;
+      }
+      updateTrackProgress(audio);
+    });
+  });
 
   // =========================================================================
   // ATMOSPHERIC DUST / PETAL CANVAS
