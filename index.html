@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Ankshika | An Unconditional Apology & Sincere Truth</title>
+  
+  <!-- Fonts: Cormorant Garamond for deep emotion, Plus Jakarta Sans for clean clarity -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-velvet">
+
+  <!-- Ambient Floating Background Particles / Dust Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Ambient Sound Control & Personalize Floating Bar -->
+  <header class="top-nav">
+    <div class="nav-brand">
+      <span class="heart-icon">✦</span>
+      <span class="brand-text">A Sincere & Humble Truth</span>
+    </div>
+    
+    <div class="nav-actions">
+      <!-- Ambient Audio Toggle -->
+      <button id="audio-toggle-btn" class="nav-pill-btn" title="Toggle peaceful background ambient sound" aria-label="Toggle ambient music">
+        <svg class="audio-icon playing-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <span class="audio-label">Ambient Music</span>
+      </button>
+
+      <!-- Theme Mode Toggle -->
+      <button id="theme-toggle-btn" class="nav-pill-btn" title="Toggle soft parchment / dark velvet theme" aria-label="Toggle theme">
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+
+      <!-- Quick Customize Modal Opener -->
+      <button id="customize-btn" class="nav-pill-btn highlight-btn" title="Personalize names, dates, letters, and photos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+        </svg>
+        <span>Personalize</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-wrapper">
+    
+    <!-- Hero / Prelude Notice -->
+    <section class="prelude-banner">
+      <div class="prelude-content">
+        <p class="gentle-tag">Zero Pressure &bull; Take All The Time You Need</p>
+        <p class="prelude-text">
+          "I know words alone cannot mend the fracture I caused. This space exists with no demands, no expectations of immediate forgiveness, and no excuses. Just the raw, humble truth of how truly sorry I am, and how deeply I value you."
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="section-tabs" aria-label="Sections">
+      <button class="tab-btn active" data-target="page-letter">
+        <span class="tab-num">01</span>
+        <span class="tab-title">The Sincere Letter</span>
+      </button>
+      <button class="tab-btn" data-target="page-commitments">
+        <span class="tab-num">02</span>
+        <span class="tab-title">Concrete Commitments</span>
+      </button>
+      <button class="tab-btn" data-target="page-memories">
+        <span class="tab-num">03</span>
+        <span class="tab-title">Memories & Gratitude</span>
+      </button>
+      <button class="tab-btn" data-target="page-safe-space">
+        <span class="tab-num">04</span>
+        <span class="tab-title">Your Safe Space</span>
+      </button>
+    </nav>
+
+    <!-- PAGE 1: THE SINCERE LETTER -->
+    <article id="page-letter" class="page-section active-section">
+      <div class="card-parchment letter-card">
+        <div class="letter-stamp">
+          <span class="stamp-border">From The Heart</span>
+        </div>
+
+        <header class="letter-header">
+          <span class="letter-date" id="display-date">October 2026</span>
+          <h1 class="letter-salutation">To My Dearest <span class="her-name-placeholder" id="letter-recipient-name">Ankshika</span>,</h1>
+        </header>
+
+        <div class="letter-body" id="letter-content-container">
+          <!-- Featured Real Polaroid Frame -->
+          <div class="letter-polaroid-wrap">
+            <img src="assets/images/photo-candid-laugh.jpg" alt="Your beautiful candid smile" class="letter-polaroid-img">
+            <p class="letter-polaroid-caption">"The smile I broke, and the smile I will spend my life working to earn back."</p>
+          </div>
+
+          <p class="lead-para">
+            Ankshika, I am writing this with a heavy heart, tears in my eyes, and a depth of remorse that words can hardly hold. I want to look you in the eyes—even through these words—and say plainly what I did, without hiding behind any veil: <strong>I betrayed your trust. I cheated on you, and I broke the sacred bond we spent so long building.</strong>
+          </p>
+
+          <p>
+            I want to make something unequivocally clear right now: <strong>I offer zero excuses.</strong> I will not blame distance, I will not blame stress, I will not blame alcohol, and I will never dare to blame any argument or misunderstanding between us. What happened was the result of my own weakness, extreme selfishness, and a catastrophic lapse in character. You did nothing—absolutely nothing—to cause or deserve this agony. The guilt, the shame, and the responsibility rest entirely on my shoulders alone.
+          </p>
+
+          <div class="quote-callout">
+            <span class="quote-symbol">“</span>
+            <p>You gave me your precious heart, your vulnerability, your late-night calls, your sleepy laughter, and your faith. And instead of protecting that sacred gift, I carelessly shattered it. Seeing you in pain because of my actions is the most unbearable realization of my life.</p>
+          </div>
+
+          <p>
+            I know that the hardest part of betrayal is not just the act itself, but the cruel robbery of your peace. It makes you question every memory we ever shared, every sweet thing I ever whispered, and every plan we made for tomorrow. You do not deserve to lie awake at night wondering why you weren't enough. <em>You were always more than enough, Ankshika.</em> You have been the brightest, kindest, most extraordinary light in my life, and my failure was entirely my own inner sickness, never yours.
+          </p>
+
+          <p>
+            I am not writing this to emotionally blackmail you into easing my guilt, or to force you to smile and say "it’s okay." It is not okay. You have every right to feel furious, disappointed, disgusted, heartbroken, or completely numb. Every single emotion you feel right now is 100% valid, and I will sit in whatever fire you need me to sit in without ever getting defensive or asking you to "move on faster."
+          </p>
+
+          <p>
+            I want you to know with absolute certainty: <strong>There is no one else I want. There never was anyone who could compare to you, and there never will be.</strong> The thought of a life without you is hollow, but more than my own loneliness, my priority is your healing. Even if healing takes time, even if it requires hard conversations, even if you need to yell at me or ask me questions a thousand times—I am here, Ankshika. I am not running away.
+          </p>
+
+          <p>
+            I love you with all the broken pieces of my humbled heart. I am deeply, devastatingly sorry.
+          </p>
+        </div>
+
+        <footer class="letter-signoff">
+          <p class="signoff-phrase">Always and forever accountable to you,</p>
+          <p class="signoff-name" id="letter-sender-name">Ujjawal</p>
+        </footer>
+
+        <div class="section-footer-actions">
+          <button class="next-step-btn" data-next="page-commitments">
+            <span>Read My Concrete Commitments</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- PAGE 2: MY COMMITMENTS & RADICAL TRANSPARENCY -->
+    <article id="page-commitments" class="page-section">
+      <div class="content-header">
+        <span class="section-badge">Actionable Repentance</span>
+        <h2>Concrete Commitments to Rebuild What I Broke</h2>
+        <p class="section-subtitle">
+          Apologies mean nothing without sustained, verifiable behavioral change. These are not empty wishes; they are the non-negotiable standards I hold myself to from this moment onward.
+        </p>
+      </div>
+
+      <div class="commitments-grid">
+        
+        <!-- Commitment 1 -->
+        <div class="commitment-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3>1. Radical & Unrestricted Transparency</h3>
+          <p>
+            I surrender any expectation of secretive privacy between us. My phone, messages, social accounts, and location are open to you whenever you want, without you ever having to feel guilty for checking. Transparency is no longer a privilege—it is the floor of our relationship.
+          </p>
+          <div class="action-tag">Open Devices &bull; Zero Hidden Accounts &bull; Proactive Updates</div>
+        </div>
+
+        <!-- Commitment 2 -->
+        <div class="commitment-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3>2. Defenseless & Unflinching Honesty</h3>
+          <p>
+            Whenever you have questions—whether right now, at 3:00 AM, or six months down the line—I will answer every single detail with complete, unedited truth. I will never say "can we not talk about this again," roll my eyes, or act frustrated. You deserve clarity, not minimization.
+          </p>
+          <div class="action-tag">No Gaslighting &bull; Full Accountability &bull; Infinite Patience</div>
+        </div>
+
+        <!-- Commitment 3 -->
+        <div class="commitment-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3>3. Respecting Your Timeline & Boundaries</h3>
+          <p>
+            I will never rush your healing process. If you need days of silence, I will respect that. If you need physical distance, I will step back while remaining readily reachable. You hold the steering wheel; I will follow the pace that feels safe for your heart.
+          </p>
+          <div class="action-tag">Your Terms &bull; Zero Pressure &bull; Patient Consistency</div>
+        </div>
+
+        <!-- Commitment 4 -->
+        <div class="commitment-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <h3>4. Genuine Inner Work & Personal Counseling</h3>
+          <p>
+            I recognize that this betrayal stemmed from deep personal flaws, validation-seeking, or lack of discipline within me. I am committing to individual therapy / counseling and conscious self-discipline so that I become the grounded, trustworthy partner you always deserved.
+          </p>
+          <div class="action-tag">Therapy / Inner Healing &bull; Fixing Root Causes &bull; Real Growth</div>
+        </div>
+
+        <!-- Commitment 5 -->
+        <div class="commitment-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+          </div>
+          <h3>5. Severing All Toxic Doors & Temptations</h3>
+          <p>
+            I have permanently severed contact, blocked, and removed any individual or environment associated with this betrayal. There will be zero ambiguity or blurred lines in who has access to me. My emotional and physical presence belongs solely to you.
+          </p>
+          <div class="action-tag">Permanently Blocked &bull; Zero Contact &bull; Ironclad Boundaries</div>
+        </div>
+
+        <!-- Commitment 6: Privacy vs Secrecy -->
+        <div class="commitment-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3>6. Never in Shadows: Privacy Without Secrecy</h3>
+          <p>
+            I know you want our bond to be public, and I understand why: after what I did, secrecy feels dangerous and terrifying. I promise: keeping our healing sacred between us will <em>never</em> mean hiding you or acting single. Anyone who matters in my life will know without a doubt that my heart and loyalty belong solely to you, Ankshika.
+          </p>
+          <div class="action-tag">Zero Acting Single &bull; Proud of You &bull; Healing Our Foundation First</div>
+        </div>
+
+        <!-- Commitment 7 -->
+        <div class="commitment-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3>7. Re-Earning Your Trust Brick by Brick</h3>
+          <p>
+            I understand that trust isn't restored by an apology; it is slowly re-built through hundreds of quiet, consistent, honest days. I am prepared to put in the quiet work for as long as it takes, asking for nothing in return except the chance to prove my devotion.
+          </p>
+          <div class="action-tag">Long-Term Devotion &bull; Deeds Over Words &bull; Steadfast Loyalty</div>
+        </div>
+
+      </div>
+
+      <!-- Concrete Action Timeline -->
+      <div class="timeline-container card-parchment">
+        <h3 class="timeline-heading">My Day-to-Day Actions Starting Today</h3>
+        <ul class="timeline-list">
+          <li>
+            <div class="timeline-bullet"></div>
+            <div class="timeline-text">
+              <strong>Check-ins without smothering:</strong> Letting you know where I am and what I am doing so you never have to wonder or worry.
+            </div>
+          </li>
+          <li>
+            <div class="timeline-bullet"></div>
+            <div class="timeline-text">
+              <strong>Emotional safety first:</strong> When you feel triggered or sad, my only response will be comfort, listening, and holding space—never irritation.
+            </div>
+          </li>
+          <li>
+            <div class="timeline-bullet"></div>
+            <div class="timeline-text">
+              <strong>Active appreciation:</strong> Remembering and honoring every single reason you are irreplaceable to me.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section-footer-actions">
+        <button class="next-step-btn" data-next="page-memories">
+          <span>Look at What We Built & What I Value</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </article>
+
+    <!-- PAGE 3: MEMORIES & GRATITUDE GALLERY -->
+    <article id="page-memories" class="page-section">
+      <div class="content-header">
+        <span class="section-badge">Gratitude & Honoring Us</span>
+        <h2>What You Mean to Me & What We Built</h2>
+        <p class="section-subtitle">
+          I am not showing these memories to manipulate your nostalgia, but to remind you that I know exactly how sacred our journey is. I recognize the immense value of what I recklessly endangered.
+        </p>
+      </div>
+
+      <!-- Gratitude Highlights -->
+      <div class="gratitude-pillars">
+        <div class="pillar-card">
+          <div class="pillar-number">01</div>
+          <h4>Your Unconditional Kindness</h4>
+          <p>You have always loved with grace and warmth. Even when I was flawed or difficult, your heart was pure. That is rare, and I took it for granted in a moment of foolish blindness.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-number">02</div>
+          <h4>The Quiet Understanding We Had</h4>
+          <p>The inside jokes, the unspoken glances across crowded rooms, the simple comfort of doing nothing together. You were my home, and home is what I long to protect.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-number">03</div>
+          <h4>How You Inspired Me to Be Better</h4>
+          <p>Being with you made me want to achieve more and be a gentler human. Failing you is the sharpest wake-up call of my existence to finally do the real growth.</p>
+        </div>
+      </div>
+
+      <!-- Featured Video Showcase -->
+      <div class="video-showcase-card">
+        <div class="video-badge-wrap">
+          <span class="section-badge">Captured In Motion &bull; 01:33</span>
+        </div>
+        <h3 class="video-heading">The Life, Rhythm & Grace in You</h3>
+        <p class="video-subtext">
+          Static photos remind me of how breathtaking you are, but this video holds your presence, your rhythm, and the living grace of who you are. Watching this reminds me every single day why no one else could ever hold a candle to you, Ankshika.
+        </p>
+        <div class="video-frame-container">
+          <video id="featured-memory-video" class="cinematic-video" controls playsinline preload="metadata" poster="assets/images/photo-sunset-floral.jpg">
+            <source src="assets/videos/special-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-caption-bar">
+          <span class="video-time-tag">⏱️ 01:33 of Pure Memories</span>
+          <span class="video-quote">"The moments we lived, and the only person I will spend my life loving."</span>
+        </div>
+      </div>
+
+      <!-- Gallery Grid with Image Placeholders & Upload/Customization Ability -->
+      <div class="gallery-controls-bar">
+        <span class="gallery-title">Our Sacred Moments</span>
+        <button id="add-memory-btn" class="secondary-btn" title="Add a custom photo or memory note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Add Your Photos / Notes</span>
+        </button>
+      </div>
+
+      <div class="memories-grid" id="memories-grid-container">
+        <!-- Memory 1: Candid Laugh -->
+        <div class="memory-card">
+          <div class="memory-image-holder">
+            <img src="assets/images/photo-candid-laugh.jpg" alt="Your Purest Laugh" class="memory-img" loading="lazy">
+            <span class="memory-tag">Your Purest Laugh</span>
+          </div>
+          <div class="memory-details">
+            <h4 class="memory-title">The Smile I Swear to Protect</h4>
+            <p class="memory-caption">"The way you laugh wholeheartedly and shyly cover your mouth... that innocence, that genuine spark is the most beautiful thing in the world. Realizing that my reckless actions brought pain to those eyes breaks me completely. I want nothing more than to bring that pure, unburdened smile back."</p>
+          </div>
+        </div>
+
+        <!-- Memory 2: Sunset Floral -->
+        <div class="memory-card">
+          <div class="memory-image-holder">
+            <img src="assets/images/photo-sunset-floral.jpg" alt="Golden Hour & Floral Dress" class="memory-img" loading="lazy">
+            <span class="memory-tag">Golden Hour &bull; 11 Nov 2024</span>
+          </div>
+          <div class="memory-details">
+            <h4 class="memory-title">The Soft Grace of Your Soul</h4>
+            <p class="memory-caption">"In this red floral dress under the evening sky, you looked like pure poetry. Peaceful, radiant, and gentle. You loved me with that same quiet tenderness, and I will spend every single day regretting that I hurt someone so profoundly good."</p>
+          </div>
+        </div>
+
+        <!-- Memory 3: Phone Booth -->
+        <div class="memory-card">
+          <div class="memory-image-holder">
+            <img src="assets/images/photo-booth.jpg" alt="Red Telephone Booth" class="memory-img" loading="lazy">
+            <span class="memory-tag">Retro Booth &bull; Guzarish</span>
+          </div>
+          <div class="memory-details">
+            <h4 class="memory-title">The One I Always Want to Call Home</h4>
+            <p class="memory-caption">"Standing in that bright red phone booth, effortless and cool. You were never just my girlfriend; you were my favorite person to talk to about everything and nothing. I long for the day you feel safe enough to pick up my call again."</p>
+          </div>
+        </div>
+
+        <!-- Memory 4: Light Blue Dress -->
+        <div class="memory-card">
+          <div class="memory-image-holder">
+            <img src="assets/images/photo-blue-dress.jpg" alt="Light Blue Dress" class="memory-img" loading="lazy">
+            <span class="memory-tag">Effortless Elegance</span>
+          </div>
+          <div class="memory-details">
+            <h4 class="memory-title">The Light Blue Dress & Your Quiet Radiance</h4>
+            <p class="memory-caption">"Whenever you get dressed up, there is this soft elegance that takes my breath away. You were always more than enough in every possible way. My failure was never a reflection of your worth—you are irreplaceable."</p>
+          </div>
+        </div>
+
+        <!-- Memory 5: Emerald Green / Mirror Glow -->
+        <div class="memory-card">
+          <div class="memory-image-holder">
+            <img src="assets/images/photo-mirror-glow.jpg" alt="Glowing Mirror" class="memory-img" loading="lazy">
+            <span class="memory-tag">Unmatched Presence</span>
+          </div>
+          <div class="memory-details">
+            <h4 class="memory-title">The Only One I See</h4>
+            <p class="memory-caption">"Even in subtle shadows or glowing mirrors, no one in any room could ever hold a candle to you. There is no one else I desire, no one else I will ever look for. My eyes and my loyalty belong solely to you."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-footer-actions">
+        <button class="next-step-btn" data-next="page-safe-space">
+          <span>Go to Your Safe Space</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </article>
+
+    <!-- PAGE 4: SAFE SPACE / HER VOICE & HER RESPONSE -->
+    <article id="page-safe-space" class="page-section">
+      <div class="content-header">
+        <span class="section-badge">Zero Pressure &bull; Your Safe Space</span>
+        <h2>Whatever You Feel, It Is Safe Here</h2>
+        <p class="section-subtitle">
+          You do not owe me an answer today. You do not owe me forgiveness. If you just want to close this page and never reply, that is your right. But if you have words, anger, questions, or boundaries you need to set, this space is yours.
+        </p>
+      </div>
+
+      <div class="card-parchment response-card">
+        
+        <!-- Quick Sentiments / Boundary Selectors -->
+        <div class="sentiment-selector-wrapper">
+          <label class="input-label">Select what feels most true for you right now (optional):</label>
+          <div class="sentiment-options">
+            <button class="sentiment-pill" data-sentiment="I need complete space and silence right now. Please do not contact me until I reach out.">
+              🌿 I need silence & space
+            </button>
+            <button class="sentiment-pill" data-sentiment="I am furious and deeply hurt. I need you to just listen without making excuses.">
+              💔 I am angry & deeply hurt
+            </button>
+            <button class="sentiment-pill" data-sentiment="I have hard, honest questions you must answer before anything else.">
+              ❓ I have questions you must answer
+            </button>
+            <button class="sentiment-pill" data-sentiment="I am willing to talk, but strictly on my terms and timeline.">
+              🕊️ I am open to talking slowly
+            </button>
+            <button class="sentiment-pill" data-sentiment="I don't know what I feel yet. My thoughts are confused and overwhelmed.">
+              🌧️ I am overwhelmed & unsure
+            </button>
+          </div>
+        </div>
+
+        <!-- Custom Message Form -->
+        <div class="response-form-group">
+          <label for="her-response-text" class="input-label">Speak your mind freely (everything you say is respected):</label>
+          <textarea id="her-response-text" class="text-area-input" rows="6" placeholder="Type whatever is in your heart... your anger, your tears, your questions, or the rules and boundaries you need from me right now."></textarea>
+        </div>
+
+        <!-- Boundary Setting Checkboxes -->
+        <div class="boundaries-box">
+          <h4 class="boundaries-title">My Boundaries For Now:</h4>
+          <div class="checkbox-group">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="boundary-no-calls">
+              <span class="checkmark"></span>
+              <span>Please do not call me for the next few days.</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" id="boundary-text-only">
+              <span class="checkmark"></span>
+              <span>Only reach out via text if it is essential.</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" id="boundary-in-person">
+              <span class="checkmark"></span>
+              <span>I need time before I can look at you or meet in person.</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" id="boundary-full-truth">
+              <span class="checkmark"></span>
+              <span>Be ready to tell me the 100% complete truth without omitting anything.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Delivery & Export Actions -->
+        <div class="response-actions-wrap">
+          <button id="send-whatsapp-btn" class="action-btn primary-action">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span>Send to Him on WhatsApp</span>
+          </button>
+
+          <button id="send-email-btn" class="action-btn secondary-action">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>Send Privately via Email</span>
+          </button>
+
+          <button id="copy-response-btn" class="action-btn outline-action">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Copy Response</span>
+          </button>
+        </div>
+
+        <div id="response-status-feedback" class="status-alert hidden"></div>
+
+        <div class="closing-quote">
+          <p>
+            "No matter what you choose, my love and deep respect for you do not depend on conditions. Your happiness and peace are what matter most."
+          </p>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Sticky Bottom Navigation for Mobile / Easy Tab Switching -->
+  <footer class="bottom-bar">
+    <div class="bottom-bar-content">
+      <div class="nav-indicator">
+        <span class="step-indicator" id="current-step-label">Section 1 of 4: The Sincere Letter</span>
+      </div>
+      <div class="quick-nav-arrows">
+        <button id="prev-section-btn" class="arrow-btn" aria-label="Previous Section" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="next-section-btn" class="arrow-btn" aria-label="Next Section">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PERSONALIZATION MODAL (Allows user to customize names, contact info, letter & photos easily) -->
+  <div id="customize-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-window card-parchment">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge">Personalization Settings</span>
+          <h3 id="modal-title">Customize This Experience</h3>
+        </div>
+        <button id="close-modal-btn" class="close-icon-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-desc">
+          Personalize the details below. All updates are instantly reflected on the website and saved to your browser!
+        </p>
+
+        <div class="form-row">
+          <div class="form-col">
+            <label for="cfg-her-name" class="input-label">Her Name / Nickname:</label>
+            <input type="text" id="cfg-her-name" class="text-input" value="Ankshika" placeholder="Ankshika">
+          </div>
+          <div class="form-col">
+            <label for="cfg-your-name" class="input-label">Your Name:</label>
+            <input type="text" id="cfg-your-name" class="text-input" value="Ujjawal" placeholder="Ujjawal">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-col">
+            <label for="cfg-your-email" class="input-label">Your Email (for receiving her reply):</label>
+            <input type="email" id="cfg-your-email" class="text-input" placeholder="e.g. yourname@gmail.com">
+          </div>
+          <div class="form-col">
+            <label for="cfg-your-phone" class="input-label">Your WhatsApp / Phone (with country code):</label>
+            <input type="tel" id="cfg-your-phone" class="text-input" placeholder="e.g. +919876543210">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-col">
+            <label for="cfg-letter-date" class="input-label">Letter Date / Subheading:</label>
+            <input type="text" id="cfg-letter-date" class="text-input" placeholder="e.g. October 2026">
+          </div>
+        </div>
+
+        <div class="modal-section-divider"></div>
+
+        <div class="form-group">
+          <label for="cfg-custom-letter" class="input-label">Add a Personalized Note into the Letter (optional):</label>
+          <textarea id="cfg-custom-letter" class="text-area-input" rows="4" placeholder="Mention any specific moment, place, or specific words you want her to read..."></textarea>
+        </div>
+
+        <!-- Add Custom Photo / Memory Form -->
+        <div class="modal-section-divider"></div>
+        <h4 class="sub-heading">Add a Real Photo to Your Memories Gallery:</h4>
+        <div class="form-row">
+          <div class="form-col">
+            <label for="cfg-photo-title" class="input-label">Memory Title:</label>
+            <input type="text" id="cfg-photo-title" class="text-input" placeholder="e.g. Our Trip to the Mountains">
+          </div>
+          <div class="form-col">
+            <label for="cfg-photo-tag" class="input-label">Badge Tag:</label>
+            <input type="text" id="cfg-photo-tag" class="text-input" placeholder="e.g. Unforgettable">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cfg-photo-caption" class="input-label">Memory Caption / Thought:</label>
+          <input type="text" id="cfg-photo-caption" class="text-input" placeholder="e.g. The day we sat by the water talking for hours...">
+        </div>
+        <div class="form-group">
+          <label class="input-label">Upload Photo from Device OR Enter Image URL:</label>
+          <div class="file-url-toggle">
+            <input type="file" id="cfg-photo-file" accept="image/*" class="file-input">
+            <input type="url" id="cfg-photo-url" class="text-input" placeholder="Or paste an image URL (https://...)">
+          </div>
+        </div>
+        <button type="button" id="cfg-add-photo-btn" class="secondary-btn">
+          <span>+ Add Memory to Gallery</span>
+        </button>
+      </div>
+
+      <div class="modal-footer">
+        <button id="reset-defaults-btn" class="outline-action small-btn">Reset Defaults</button>
+        <button id="save-settings-btn" class="action-btn primary-action">Save & Apply Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
